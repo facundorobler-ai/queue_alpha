@@ -68,15 +68,3 @@ python telegram_test.py
 
 5. Si llega el mensaje de prueba, iniciá el monitor normalmente con `python main.py`, conservando las variables en esa misma ventana. Cuando el monitor detecte que un navegador vio la fila y luego llegó a una página de ingreso, enviará una notificación. No envía mensajes por cada lectura de minutos.
 
-Si `telegram_get_chat_id.py` muestra `URLError`, esta versión informa el motivo de conexión sin mostrar el token. Las variables configuradas con `set` duran solo mientras esa ventana de CMD siga abierta. El token y el chat ID no se guardan en los archivos del proyecto. La integración agrega la dependencia `truststore` para que Python use el almacén nativo de certificados del sistema. Esto es útil si `curl.exe` conecta mediante Schannel, pero Python falla con `CERTIFICATE_VERIFY_FAILED`. La validación TLS permanece activada. Si Telegram no está configurado, el programa sigue funcionando con alertas locales.
-
-
-## Corrección de certificados HTTPS en Windows
-
-Si `telegram_get_chat_id.py` informa `CERTIFICATE_VERIFY_FAILED` y `curl.exe` se conecta sin error TLS, actualizá las dependencias desde la misma terminal y entorno virtual:
-
-```bat
-python -m pip install -r requirements.txt
-```
-
-Luego volvé a ejecutar `python telegram_get_chat_id.py`. El proyecto usa `truststore` para aprovechar el almacén de certificados de Windows; no desactiva la verificación TLS. Esta solución requiere Python 3.10 o posterior.
