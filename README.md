@@ -38,7 +38,7 @@ python -m pip install -r requirements.txt
 
 ## Seguridad de credenciales
 
-No escribas credenciales reales en `config.py` ni las compartas en capturas o repositorios. Las variables de entorno reducen la exposición accidental, aunque no protegen frente a otros procesos o usuarios con acceso a la misma sesión. Como la contraseña apareció en el archivo original que compartiste, cambiála si era una contraseña real.
+No escribas credenciales reales en `config.py` ni las compartas.
 
 ## Alcance actual
 
